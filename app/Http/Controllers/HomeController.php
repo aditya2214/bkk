@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -23,10 +23,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $count_jobs = \App\Jobs::count();
-        $count_user = \App\User::count();
+        if(Auth::user()->role == 0){
+    
+            return view('welcome');
+        }else{
+            $count_jobs = \App\Jobs::count();
+            $count_user = \App\User::count();
+    
+            return view('component_backend.content.dashboard',compact('count_jobs','count_user'));
 
-        return view('component_backend.content.dashboard',compact('count_jobs','count_user'));
+        }
    
     }
 }

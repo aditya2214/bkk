@@ -26,6 +26,9 @@
                                 <th>Last Education</th>
                                 <th>Number Phone</th>
                                 <th>Address</th>
+                                <th>
+                                <i class="fas fa-user-cog"></i>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,6 +42,13 @@
                                 <td>{{$user->last_education }}</td>
                                 <td>{{$user-> number_phone}}</td>
                                 <td>{{$user->address }}</td>
+                                <td>
+                                    @if($user->role == 0)
+                                    <a class="badge badge-primary btn">User</a>
+                                    @else                                    
+                                    <a class="badge badge-success btn">Admin</a>
+                                    @endif
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

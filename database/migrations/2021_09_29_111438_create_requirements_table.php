@@ -19,8 +19,8 @@ class CreateRequirementsTable extends Migration
             $table->string('gender',20);
             $table->string('education',10);
             $table->integer('age');
-            $table->string('other_requirements',255);
-            $table->text('notes');
+            $table->text('other_requirements')->nullable();
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }

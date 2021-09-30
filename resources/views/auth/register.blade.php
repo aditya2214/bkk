@@ -49,9 +49,9 @@
                                 <input placeholder="Confirm Password" id="password-confirm" type="password" class="form-control form-control-user" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        <a class="btn btn-primary btn-user btn-block">
+                        <button class="btn btn-primary btn-user btn-block">
                             Register Account
-                        </a>
+                        </button>
                         <hr>
                     </form>
                     <hr>

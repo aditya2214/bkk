@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Job Desc</label>
-                        <textarea class="form-control" required name="job_desc" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="job_desc" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="">Test Date</label>

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>BKK SMK PGRI 2 KARAWANG</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset ('backend/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
