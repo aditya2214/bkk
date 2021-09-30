@@ -33,19 +33,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // use auth
     // update_profil
-    Route::get('/update_profil', 'FrontendController@update_profil')->name('update_profil');
+    Route::get('/update_profil', 'homeController@update_profil')->name('update_profil');
 
     // jobs admin
-    Route::get('/page_post_a_jobs', 'FrontendController@page_post_a_jobs')->name('page_post_a_jobs');
-    Route::get('/index_a_jobs', 'FrontendController@index_a_jobs')->name('index_a_jobs');
-    Route::get('/store_jobs', 'FrontendController@store_jobs')->name('store_jobs');
-    Route::get('/edit_jobs/{id}', 'FrontendController@edit_jobs')->name('edit_jobs');
-    Route::get('/update_jobs/{id}', 'FrontendController@update_jobs')->name('update_jobs');
+    Route::get('/page_post_a_jobs', 'homeController@page_post_a_jobs')->name('page_post_a_jobs');
+    Route::get('/index_a_jobs', 'homeController@index_a_jobs')->name('index_a_jobs');
+    Route::get('/store_jobs', 'homeController@store_jobs')->name('store_jobs');
+    Route::get('/edit_jobs/{id}', 'homeController@edit_jobs')->name('edit_jobs');
+    Route::get('/update_jobs/{id}', 'homeController@update_jobs')->name('update_jobs');
 
     //dashboard admin
-    Route::get('/page_dashboard_sortcut', 'FrontendController@page_dashboard_sortcut')->name('page_dashboard_sortcut');
+    Route::get('/page_dashboard_sortcut', 'homeController@page_dashboard_sortcut')->name('page_dashboard_sortcut');
 
     // users
-    Route::get('/page_users', 'FrontendController@page_users')->name('page_users');
+    Route::get('/page_users', 'homeController@page_users')->name('page_users');
  
-
