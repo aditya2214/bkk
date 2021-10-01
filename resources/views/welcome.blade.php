@@ -73,7 +73,24 @@
             @endif
         </div>
 
-        @unclude('content_frontend.slider')
+        <div class="section full mt-3 mb-3">
+            <div class="carousel-multiple owl-carousel owl-theme">
+
+                <div class="item">
+                    <div class="card">
+                        <img src="{{ asset ('cv6.png') }}" class="card-img-top" alt="image">
+                        <div class="card-body pt-2">
+                            <h4 class="mb-0">cv6</h4>
+                            <p class="text-warning"> <i class="fas fa-dollar-sign"></i>&nbsp; Rp 20.000</p>
+                            
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
 
 
         <div class="section mt-3 mb-3">
@@ -94,7 +111,27 @@
             </div>
         </div>
 
-        @include('content_frontend.loker')
+        @foreach($jobs as $job)
+        <div class="section mt-3 mb-3">
+            <div class="card">
+                <img src="{{ asset ('download.png') }}" class="card-img-top" alt="image">
+                <div class="card-body">
+                    <h6 class="card-subtitle">{{$job->title_jobs}}</h6>
+                    <h5 class="card-title">Tanggal Tes : {{$job->test_date}}</h5>
+                    <p class="card-text">
+                       {{$job->education}}
+                    </p>
+                    <p class="card-text">
+                       Maksimal {{$job->age}} Tahun
+                    </p>
+                    <a href="app-components.html" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>&nbsp;
+                        Details
+                    </a>
+                </div>
+            </div>
+        </div>
+        @endforeach
 
 
         <!-- app footer -->

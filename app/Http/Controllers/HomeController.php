@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::user()->role == 0){
-    
+            
             return view('welcome');
         }else{
             $count_jobs = \App\Jobs::count();

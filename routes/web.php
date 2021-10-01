@@ -13,14 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/logout', function () {
     Auth::logout();
     return view('auth.login');
 });
+
 
 
 Auth::routes();
@@ -29,7 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // no auth
     //info loker
-    Route::get('/info_loker', 'noAuthFrontendController@info_loker')->name('info_loker');
+    Route::get('/', 'noAuthFrontendController@index')->name('home');
 
 // use auth
     // update_profil
