@@ -48,6 +48,8 @@ class HomeController extends Controller
     }
 
     public function store_jobs(Request $request){
+
+        // return $request->all();
         // Store Jobs
         $store_jobs = new \App\Jobs;
         $store_jobs->title_jobs = $request->title_jobs;

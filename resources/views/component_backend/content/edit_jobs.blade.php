@@ -28,7 +28,10 @@
                     </div>
                     <div class="form-group">
                         <label for="">Job Desc</label>
-                        <textarea class="form-control" required name="job_desc" id="exampleFormControlTextarea1" rows="3">{{$edit->job_desc }}</textarea>
+                        <textarea class="form-control" required name="job_desc" id="job_desc" rows="3">{{$edit->job_desc }}</textarea>
+                        <script>
+                            CKEDITOR.replace( 'job_desc' );
+                        </script>
                     </div>
                     <div class="form-group">
                         <label for="">Test Date</label>
@@ -50,11 +53,17 @@
                     </div>
                     <div class="form-group">
                         <label for="">Other Recuirement</label>
-                        <textarea class="form-control" name="other_requirements" id="exampleFormControlTextarea1" rows="3">{{$edit->other_requirements }}</textarea>
+                        <textarea class="form-control" name="other_requirements" id="other_requirements" rows="3">{{$edit->other_requirements }}</textarea>
+                        <script>
+                            CKEDITOR.replace( 'other_requirements' );
+                        </script>
                     </div>
                     <div class="form-group">
                         <label for="">Notes</label>
-                        <textarea class="form-control" name="notes" id="exampleFormControlTextarea1" rows="3">{{$edit->notes }}</textarea>
+                        <textarea class="form-control" name="notes" id="notes" rows="3">{{$edit->notes }}</textarea>
+                        <script>
+                            CKEDITOR.replace( 'notes' );
+                        </script>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-success form-control">Update</button>

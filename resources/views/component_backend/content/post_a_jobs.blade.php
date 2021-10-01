@@ -27,7 +27,11 @@
                     </div>
                     <div class="form-group">
                         <label for="">Job Desc</label>
-                        <textarea class="form-control" name="job_desc" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="job_desc" id="job_desc" rows="3"></textarea>
+                       
+                        <script>
+                            CKEDITOR.replace( 'job_desc' );
+                        </script>
                     </div>
                     <div class="form-group">
                         <label for="">Test Date</label>
@@ -49,11 +53,17 @@
                     </div>
                     <div class="form-group">
                         <label for="">Other Recuirement</label>
-                        <textarea class="form-control" name="other_requirement" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="other_requirement" id="other_requiremets" rows="3"></textarea>
+                        <script>
+                            CKEDITOR.replace( 'other_requiremets' );
+                        </script>
                     </div>
                     <div class="form-group">
                         <label for="">Notes</label>
-                        <textarea class="form-control" name="notes" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="notes" id="notes" rows="3"></textarea>
+                        <script>
+                            CKEDITOR.replace( 'notes' );
+                        </script>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-success form-control">Save</button>
