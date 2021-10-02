@@ -1,9 +1,26 @@
 @extends('layouts.app_frontend')
 
 @section('content')
-<div class="section full mt-3 mb-3">
-    <div class="carousel-multiple owl-carousel owl-theme">
+<!-- App Capsule -->
+    <div class="section full mt-2">
+        <div class="section-title"><b>{{$jobs_first->title_jobs}}</b></div>
+        <div class="wide-block pt-2 pb-2">
+            <p><b>Tempat Dan Tanggal</b></p>
+            <small>{!!$jobs_first->job_desc!!} <br>
+               {!!$jobs_first->other_requirements!!}<br>
+               {!!$jobs_first->notes!!}<br>
+            </psmall >
+            <div>
+                <a href="{{ url ('daftar/'.$jobs_first->id) }}" class="btn btn-primary form-control" >Daftar</a>
+            </div>
+        </div>
 
+    </div>
+
+    <div class="section full mt-2 mb-3">
+        <div class="section-title mb-1">Buat CV</div>
+
+        <div class="carousel-multiple owl-carousel owl-theme">
         <div class="item">
             <div class="card">
                 <img src="{{ asset ('cv6.png') }}" class="card-img-top" alt="image">
@@ -75,36 +92,9 @@
 
             </div>
         </div>
-    </div>
-</div>
-
-<hr>
-&nbsp;&nbsp;&nbsp;&nbsp;<b>LOWONGAN TERSEDIA</b>
-<hr>
-
-@foreach($jobs as $job)
-<div class="section mt-3 mb-3">
-    <div class="card">
-        <div class="form-row">
-            <div class="col-4">
-                <img src="{{ asset ('download.png') }}" class="card-img-top" alt="image">
-            </div>
-            <div class="col-8">
-                <div class="card-body">
-                    <h6 class="card-subtitle">{{$job->title_jobs}}</h6>
-                    <!-- <p>Tanggal Tes : {{date('D, d M Y',strtotime($job->test_date))}}</p> -->
-                    <p class="card-text">
-                        {{$job->education}}
-                    </p>
-                    <a href="{{ url ('pageDetailJob/'.$job->id_jobs) }}" class="btn btn-primary btn-sm">
-                    <i class="fas fa-eye"></i>&nbsp;
-                        Detail
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
-</div>
-@endforeach
+
 
 @endsection
+<!-- * App Capsule -->

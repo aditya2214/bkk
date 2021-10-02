@@ -22,12 +22,13 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                            {{$job->title_jobs}}</div>
-                            <ul>
-                                <li>
-                                <div class="text-gray-800">Tanggal Tes : {{$job->test_date}}</div>
-                                </li>
-                            </ul>
-                            <a href="{{url ('edit_jobs/'.$job->id) }}" class="btn-warning form-control">EDIT</a herf="edit_jobs">
+                            <div class="btn-group">
+                                <a href="{{url ('edit_jobs/'.$job->id) }}" class=" btn-sm btn btn-warning form-control">Edit</a herf="edit_jobs">
+                                <a href="{{url ('delete_jobs/'.$job->id) }}" class=" btn-sm btn btn-danger form-control">Hapus</a herf="edit_jobs">
+                            </div>
+                            <div class="float-right">
+                                <a href="{{url ('view_peserta/'.$job->id) }}" class=" btn-sm btn btn-secondary">Lihat Peserta</a>
+                            </div>
                     </div>
                     <!-- <div class="col-auto">
                         <i class="fas fa-calendar fa-2x text-gray-300"></i>

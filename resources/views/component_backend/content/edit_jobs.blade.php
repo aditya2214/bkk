@@ -27,13 +27,13 @@
                         <input value="{{$edit->title_jobs}}" type="text" name="title_jobs" id="title_jobs" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="">Job Desc</label>
+                        <label for="">Tempat Dan Tanggal</label>
                         <textarea class="form-control" required name="job_desc" id="job_desc" rows="3">{{$edit->job_desc }}</textarea>
                         <script>
                             CKEDITOR.replace( 'job_desc' );
                         </script>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="">Test Date</label>
                         <input value="{{$edit->test_date }}" type="date" name="test_date" id="test_date" class="form-control" required>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="form-group">
                         <label for="">Age</label>
                         <input value="{{$edit->age }}" type="number" name="age" id="age" class="form-control" required>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="">Other Recuirement</label>
                         <textarea class="form-control" name="other_requirements" id="other_requirements" rows="3">{{$edit->other_requirements }}</textarea>

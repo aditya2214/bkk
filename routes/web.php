@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/logout', function () {
     Auth::logout();
-    return view('auth.login');
+    return redirect('/');
 });
 
 
@@ -27,9 +27,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // no auth
     //info loker
-    Route::get('/', 'noAuthFrontendController@index')->name('home');
+    Route::get('/', 'noAuthFrontendController@index');
 
 // use auth
+    // backend
     // update_profil
     Route::get('/update_profil', 'homeController@update_profil')->name('update_profil');
 
@@ -39,10 +40,23 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/store_jobs', 'homeController@store_jobs')->name('store_jobs');
     Route::get('/edit_jobs/{id}', 'homeController@edit_jobs')->name('edit_jobs');
     Route::get('/update_jobs/{id}', 'homeController@update_jobs')->name('update_jobs');
+    Route::get('/delete_jobs/{id}', 'homeController@delete_jobs')->name('delete_jobs');
+    Route::get('/view_peserta/{id}', 'homeController@view_peserta')->name('view_peserta');
 
     //dashboard admin
     Route::get('/page_dashboard_sortcut', 'homeController@page_dashboard_sortcut')->name('page_dashboard_sortcut');
 
     // users
     Route::get('/page_users', 'homeController@page_users')->name('page_users');
- 
+
+    // frontend
+    // page_profil_user
+    Route::get('/page_profil_user', 'frontendController@page_profil_user')->name('page_profil_user');
+    Route::get('/page_edit_profil', 'frontendController@page_edit_profil')->name('page_edit_profil');
+    Route::get('/page_add_profil', 'frontendController@page_add_profil')->name('page_add_profil');
+    Route::post('/storeProfilUser', 'frontendController@storeProfilUser')->name('storeProfilUser');
+    Route::post('/editProfilUser/{id}', 'frontendController@editProfilUser')->name('editProfilUser');
+
+    // job_user
+    Route::get('/pageDetailJob/{id}', 'noAuthFrontendController@pageDetailJob')->name('pageDetailJob');
+    Route::get('/daftar/{id}', 'frontendController@daftar')->name('daftar');

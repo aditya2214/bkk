@@ -17,7 +17,7 @@ class CreateJobsTable extends Migration
             $table->id();
             $table->string('title_jobs',100);
             $table->text('job_desc')->nullable();
-            $table->date('test_date');
+            $table->date('test_date')->nullable();
             $table->integer('status');
             $table->timestamps();
         });

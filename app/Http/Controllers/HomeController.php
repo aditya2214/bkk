@@ -25,8 +25,19 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::user()->role == 0){
-            
-            return view('welcome');
+            $jobs = DB::table('jobs')
+            ->join('requirements','jobs.id','requirements.id_jobs')
+            ->select('jobs.*','requirements.*')
+            ->orderBy('jobs.id','DESC')
+            ->get();
+
+            if (Auth::user() != null) {
+                # code...
+                $profil_user = \App\ProfilUsers::where('id_user',Auth::user()->id)->first();
+            }
+
+
+            return view('content_frontend.loker',compact('jobs','profil_user'));
         }else{
             $count_jobs = \App\Jobs::count();
             $count_user = \App\User::count();
@@ -118,5 +129,20 @@ class HomeController extends Controller
 
             // return $users;
         return view('component_backend.content.users',compact('users'));
+    }
+
+        
+    public function delete_jobs($id){
+        $delete_jobs = \App\Jobs::where('id',$id)->delete();
+        $delete_requirements = \App\Requirements::where('id_jobs',$id)->delete();
+
+        Alert::success(' Success ', ' Succesfully Deleted');
+        return redirect('index_a_jobs');
+    }
+
+    public function view_peserta($id){
+        $view_peserta = \App\Relation_Jobs_Users::where('id_jobs',$id)->get();
+
+        return view('component_backend.content.view_peserta',compact('view_peserta'));
     }
 }

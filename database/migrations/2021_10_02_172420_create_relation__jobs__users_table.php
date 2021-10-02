@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRequirementsTable extends Migration
+class CreateRelationJobsUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateRequirementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('requirements', function (Blueprint $table) {
+        Schema::create('relation__jobs__users', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_user');
             $table->integer('id_jobs');
-            $table->string('gender',20)->nullable();
-            $table->string('education',10)->nullable();
-            $table->integer('age')->nullable();
-            $table->text('other_requirements')->nullable();
-            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateRequirementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('requirements');
+        Schema::dropIfExists('relation__jobs__users');
     }
 }

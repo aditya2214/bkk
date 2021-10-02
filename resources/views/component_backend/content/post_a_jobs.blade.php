@@ -26,14 +26,14 @@
                         <input type="text" name="title_jobs" id="title_jobs" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="">Job Desc</label>
+                        <label for="">Tempat Dan Tanggal</label>
                         <textarea class="form-control" name="job_desc" id="job_desc" rows="3"></textarea>
                        
                         <script>
                             CKEDITOR.replace( 'job_desc' );
                         </script>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="">Test Date</label>
                         <input type="date" name="test_date" id="test_date" class="form-control" required>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="form-group">
                         <label for="">Age</label>
                         <input type="number" name="age" id="age" class="form-control" required>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="">Other Recuirement</label>
                         <textarea class="form-control" name="other_requirement" id="other_requiremets" rows="3"></textarea>
