@@ -41,7 +41,7 @@
                                 <td>{{$user->gender }}</td>
                                 <td>{{$user->last_education }}</td>
                                 <td>{{$user-> number_phone}}</td>
-                                <td>{{$user->address }}</td>
+                                <td>{!!$user->address !!}</td>
                                 <td>
                                     @if($user->role == 0)
                                     <a class="badge badge-primary btn">User</a>

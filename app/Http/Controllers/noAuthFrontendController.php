@@ -48,6 +48,7 @@ class noAuthFrontendController extends Controller
             ->select('jobs.*','requirements.*')
             ->where('id_jobs',$id)
             ->first();
+            
     
             return view('content_frontend.page_detail_job',compact('profil_user','jobs_first'));
         }else {

@@ -63,7 +63,11 @@
                 @else
                 <div class="profileBox">
                     <div class="image-wrapper">
+                        @if($profil_user == null)
+                        <img src="" alt="image" class="imaged rounded">
+                        @else
                         <img src="{{ asset ('storage/'.$profil_user->images) }}" alt="image" class="imaged rounded">
+                        @endif
                     </div>
                     <div class="in">
                         <strong>{{Auth::user()->name}}</strong>

@@ -9,7 +9,7 @@
                     @if($profil_user == null)
                     <div class="form-group">
                         <label for=""><i class="text-danger">Data Profil Anda Kosong</i></label><br>
-                        <a href="{{ url ('page_add_profil') }}" class="btn btn-success form-control">Tambah Data</a href="{{ url ('page_add_profil') }}">
+                        <a href="{{ url ('page_add_profil') }}" class="btn btn-success form-control">Tambah Data</a>
                     </div>
                     @else
                     <div class="">

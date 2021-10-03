@@ -11,7 +11,7 @@
                {!!$jobs_first->notes!!}<br>
             </psmall >
             <div>
-                <a href="{{ url ('daftar/'.$jobs_first->id) }}" class="btn btn-primary form-control" >Daftar</a>
+                <a href="{{ url ('daftar/'.$jobs_first->id_jobs) }}" class="btn btn-primary form-control" >Daftar</a>
             </div>
         </div>
 

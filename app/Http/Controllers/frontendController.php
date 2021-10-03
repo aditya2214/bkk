@@ -28,8 +28,10 @@ class frontendController extends Controller
     }
 
     public function page_add_profil(){
+        $profil_user = \App\ProfilUsers::where('id_user',Auth::user()->id)->first();
 
-        return view('content_frontend.add_form_profil');
+
+        return view('content_frontend.add_form_profil',compact('profil_user'));
 
     }
 
@@ -86,6 +88,8 @@ class frontendController extends Controller
 
 
     public function daftar($id){
+
+        // return $id;
         if (Auth::user()->role > 0) {
             Alert::error(' Gagal ', ' Anda Menggunakan Akun Admin!!!');
 

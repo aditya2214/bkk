@@ -121,13 +121,40 @@ class HomeController extends Controller
         return view('component_backend.content.dashboard',compact('count_jobs','count_user'));
     }
 
+    public function json_users(){
+        return DB::table('users')
+        ->leftjoin('profil_users','users.id','=','profil_users.id_user')
+        ->select('users.email',
+        'users.name',
+        'users.role',
+        'profil_users.full_name',
+        'profil_users.place',
+        'profil_users.date_of_birth',
+        'profil_users.gender',
+        'profil_users.last_education',
+        'profil_users.number_phone',
+        'profil_users.address'
+        )
+        ->get();
+
+    }
+
     public function page_users(){
-        $users = DB::table('users')
+            $users = DB::table('users')
             ->leftjoin('profil_users','users.id','=','profil_users.id_user')
-            ->select('users.*','profil_users.*')
+            ->select('users.email',
+            'users.name',
+            'users.role',
+            'profil_users.full_name',
+            'profil_users.place',
+            'profil_users.date_of_birth',
+            'profil_users.gender',
+            'profil_users.last_education',
+            'profil_users.number_phone',
+            'profil_users.address'
+            )
             ->get();
 
-            // return $users;
         return view('component_backend.content.users',compact('users'));
     }
 

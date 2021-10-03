@@ -23,8 +23,8 @@
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                            {{$job->title_jobs}}</div>
                             <div class="btn-group">
-                                <a href="{{url ('edit_jobs/'.$job->id) }}" class=" btn-sm btn btn-warning form-control">Edit</a herf="edit_jobs">
-                                <a href="{{url ('delete_jobs/'.$job->id) }}" class=" btn-sm btn btn-danger form-control">Hapus</a herf="edit_jobs">
+                                <a href="{{url ('edit_jobs/'.$job->id) }}" class=" btn btn-warning btn-sm form-control">Edit</a>
+                                <a href="{{url ('delete_jobs/'.$job->id) }}" class=" btn btn-danger btn-sm form-control">Hapus</a>
                             </div>
                             <div class="float-right">
                                 <a href="{{url ('view_peserta/'.$job->id) }}" class=" btn-sm btn btn-secondary">Lihat Peserta</a>

@@ -11,4 +11,5 @@ class Relation_Jobs_Users extends Model
     {
         return $this->belongsTo('\App\ProfilUsers', 'id_user', 'id_user');
     }   
+    
 }

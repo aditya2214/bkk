@@ -21,7 +21,7 @@ class CreateProfilUsersTable extends Migration
             $table->string('place',50);
             $table->date('date_of_birth');
             $table->string('gender',20);
-            $table->string('last_education',10);
+            $table->string('last_education',100);
             $table->string('number_phone',16);
             $table->string('address',255);
             $table->timestamps();
