@@ -21,10 +21,10 @@
                                 <th>Username</th>
                                 <th>Email</th>
                                 <th>Place</th>
-                                <th>Date Of Birth</th>
+                                <th>Date_Of_Birth</th>
                                 <th>Gender</th>
-                                <th>Last Education</th>
-                                <th>Number Phone</th>
+                                <th>Last_Education</th>
+                                <th>Number_Phone</th>
                                 <th>Address</th>
                                 <th>
                                 <i class="fas fa-user-cog"></i>
@@ -32,25 +32,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($users as $user)
-                            <tr>
-                                <td>{{$user-> name }}</td>
-                                <td>{{$user->email }}</td>
-                                <td>{{$user->place }}</td>
-                                <td>{{$user->date_of_birth }}</td>
-                                <td>{{$user->gender }}</td>
-                                <td>{{$user->last_education }}</td>
-                                <td>{{$user-> number_phone}}</td>
-                                <td>{!!$user->address !!}</td>
-                                <td>
-                                    @if($user->role == 0)
-                                    <a class="badge badge-primary btn">User</a>
-                                    @else                                    
-                                    <a class="badge badge-success btn">Admin</a>
-                                    @endif
-                                </td>
-                            </tr>
-                            @endforeach
+                           
                         </tbody>
                     </table>
                 </div>
@@ -64,8 +46,25 @@
 
 @section('scripts')
 <script>
-    $(document).ready(function(){
-        $('#tabel-user').DataTable();
+ $(function() {
+    var table = $('#tabel-user').DataTable({
+        
+        processing: true,
+        serverSide: true,
+        ajax: "{{url ('/json_users') }}",
+        columns: [
+            { data: 'name', name: 'name' },
+            { data: 'email', name: 'email' },
+            { data: 'place', name: 'place' },
+            { data: 'date_of_birth', name: 'date_of_birth' },
+            { data: 'gender', name: 'gender' },
+            { data: 'last_education', name: 'last_education' },
+            { data: 'number_phone', name: 'number_phone' },
+            { data: 'address', name: 'address' },
+            { data: 'role', name: 'role' },
+
+        ]
     });
+});
 </script>
 @endsection

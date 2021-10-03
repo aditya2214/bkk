@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB,Alert,Auth;
+use DataTables;
 
 class HomeController extends Controller
 {
@@ -122,40 +123,34 @@ class HomeController extends Controller
     }
 
     public function json_users(){
-        return DB::table('users')
-        ->leftjoin('profil_users','users.id','=','profil_users.id_user')
-        ->select('users.email',
-        'users.name',
-        'users.role',
-        'profil_users.full_name',
-        'profil_users.place',
-        'profil_users.date_of_birth',
-        'profil_users.gender',
-        'profil_users.last_education',
-        'profil_users.number_phone',
-        'profil_users.address'
-        )
-        ->get();
+        $j_users = \App\ProfilUsers::with('relation_user2')->get();
+
+        // return $j_users;
+
+        return Datatables::of($j_users)
+        ->editColumn('name', function ($j_users) {
+            return $j_users->relation_user2->name;
+        })
+        ->editColumn('email', function ($j_users) {
+            return $j_users->relation_user2->email;
+        })
+        ->editColumn('role', function ($j_users) {
+            if($j_users->role == 0 ){
+                return "<a href='jadikan_admin/".$j_users->id_user." ' class='badge badge-primary'>User</a>";
+            }else{
+                return "<a href='jadikan_user/".$j_users->id_user." ' class='badge badge-success'>Admin</a>";
+            }
+        })
+        ->escapeColumns([])
+        ->make(true);
+
+
 
     }
 
     public function page_users(){
-            $users = DB::table('users')
-            ->leftjoin('profil_users','users.id','=','profil_users.id_user')
-            ->select('users.email',
-            'users.name',
-            'users.role',
-            'profil_users.full_name',
-            'profil_users.place',
-            'profil_users.date_of_birth',
-            'profil_users.gender',
-            'profil_users.last_education',
-            'profil_users.number_phone',
-            'profil_users.address'
-            )
-            ->get();
 
-        return view('component_backend.content.users',compact('users'));
+        return view('component_backend.content.users');
     }
 
         

@@ -8,6 +8,7 @@ class ProfilUsers extends Model
 {
     public function relation_user2()
     {
-        return $this->belongsTo('\App\User', 'id_user', 'id');
+        return $this->belongsTo(User::Class, 'id_user', 'id');
     }
+
 }

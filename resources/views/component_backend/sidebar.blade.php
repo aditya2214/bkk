@@ -44,13 +44,19 @@
 <li class="nav-item">
     <a class="nav-link" href="{{ url ('page_users') }}">
         <i class="fas fa-users fa-table"></i>
-        <span>Users</span></a>
+        <span>Daftar Pengguna</span></a>
 </li>
 <!-- Nav Item - Charts -->
 <li class="nav-item">
     <a class="nav-link" href="{{ url ('page_post_a_jobs') }}">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Post A Jobs</span></a>
+        <i class="fas fa-edit fa-chart-area"></i>
+        <span>Posting Lowongan</span></a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="{{ url ('index_a_jobs') }}">
+    <i class="fas fa-clipboard-list"></i>
+    <span>Lowongan Tersedia</span></a>
 </li>
 
 </ul>
