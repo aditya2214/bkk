@@ -20,6 +20,8 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset ('backend/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <link href="{{ asset('datatables.min.css') }}" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -82,7 +84,9 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset ('backend/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="{{ asset ('jquery.dataTables.min.js') }}"></script>
+    <!-- <script src="{{ asset ('backend/vendor/jquery/jquery.min.js') }}"></script> -->
     <script src="{{ asset ('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
@@ -91,13 +95,7 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ asset ('backend/js/sb-admin-2.min.js') }}"></script>
 
-    <!-- Page level plugins -->
-    <script src="{{ asset ('backend/vendor/chart.js/Chart.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ asset ('backend/js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset ('backend/js/demo/chart-pie-demo.js') }}"></script>
-
+    @yield('scripts')
 </body>
 
 </html>

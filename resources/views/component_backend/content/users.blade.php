@@ -15,7 +15,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body"  style="overflow-x:auto;">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="tabel-user">
                         <thead class="bg-primary text-white">
                             <tr>
                                 <th>Username</th>
@@ -60,4 +60,12 @@
     
 </div>
 <!-- /.container-fluid -->
+@endsection
+
+@section('scripts')
+<script>
+    $(document).ready(function(){
+        $('#tabel-user').DataTable();
+    });
+</script>
 @endsection
