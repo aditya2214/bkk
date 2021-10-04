@@ -34,6 +34,9 @@ Route::get('/home', 'HomeController@index')->name('home');
     // update_profil
     Route::get('/update_profil', 'homeController@update_profil')->name('update_profil');
 
+    
+    //dashboard admin
+    Route::get('/page_dashboard_sortcut', 'homeController@page_dashboard_sortcut')->name('page_dashboard_sortcut');
     // jobs admin
     Route::get('/page_post_a_jobs', 'homeController@page_post_a_jobs')->name('page_post_a_jobs');
     Route::get('/index_a_jobs', 'homeController@index_a_jobs')->name('index_a_jobs');
@@ -43,12 +46,13 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/delete_jobs/{id}', 'homeController@delete_jobs')->name('delete_jobs');
     Route::get('/view_peserta/{id}', 'homeController@view_peserta')->name('view_peserta');
 
-    //dashboard admin
-    Route::get('/page_dashboard_sortcut', 'homeController@page_dashboard_sortcut')->name('page_dashboard_sortcut');
-
     // users
     Route::get('/page_users', 'homeController@page_users')->name('page_users');
     Route::get('json_users','homeController@json_users');
+
+    // pengumuman test
+    Route::get('pengumuman_test','homeController@pengumuman_test');
+
 
     // frontend
     // page_profil_user
@@ -61,3 +65,13 @@ Route::get('/home', 'HomeController@index')->name('home');
     // job_user
     Route::get('/pageDetailJob/{id}', 'noAuthFrontendController@pageDetailJob')->name('pageDetailJob');
     Route::get('/daftar/{id}', 'frontendController@daftar')->name('daftar');
+
+    // media
+    Route::get('/media_bkk', 'noAuthFrontendController@media_bkk')->name('media_bkk');
+
+
+    // chat
+    Route::get('/chat', 'noAuthFrontendController@chat')->name('chat');
+
+    // pengaturan
+    Route::get('/pengaturan', 'noAuthFrontendController@pengaturan')->name('pengaturan');

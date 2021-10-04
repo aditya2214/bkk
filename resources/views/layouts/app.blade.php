@@ -87,7 +87,7 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-<script src="{{ asset ('jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset ('jquery.dataTables.min.js') }}"></script>
     <!-- <script src="{{ asset ('backend/vendor/jquery/jquery.min.js') }}"></script> -->
     <script src="{{ asset ('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 

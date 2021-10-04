@@ -11,7 +11,7 @@
     <title>BKK SMK PGRI 2 KARAWANG</title>
     <meta name="description" content="Mobilekit HTML Mobile UI Kit">
     <meta name="keywords" content="bootstrap 4, mobile template, cordova, phonegap, mobile, html" />
-    <link rel="icon" type="image/png" href="{{ asset ('frontend/assets/img/favicon.png') }}" sizes="32x32">
+    <link rel="icon" style="image/png" href="{{ asset ('bkk.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset ('frontend/assets/img/icon/192x192.png') }}">
     <link rel="stylesheet" href="{{ asset ('frontend/assets/css/style.css') }}">
     <link rel="manifest" href="{{ asset ('frontend/__manifest.json') }}">
@@ -23,9 +23,9 @@
 <body>
 @include('sweetalert::alert')
     <!-- loader -->
-    <div id="loader">
+    <!-- <div id="loader">
         <div class="spinner-border text-primary" role="status"></div>
-    </div>
+    </div> -->
     <!-- * loader -->
 
     <!-- App Header -->
@@ -180,11 +180,11 @@
     <script src="{{ asset ('frontend/assets/js/base.js') }}"></script>
 
 
-    <script>
+    <!-- <script>
         setTimeout(() => {
             notification('notification-welcome', 5000);
         }, 2000);
-    </script>
+    </script> -->
 
 </body>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB,Auth;
+use Alert;
 class noAuthFrontendController extends Controller
 {
     public function index(){
@@ -63,5 +64,19 @@ class noAuthFrontendController extends Controller
             return view('content_frontend.page_detail_job',compact('jobs_first'));
         }
     }
+
+    public function media_bkk(){
+
+        Alert::error(' error ', ' Halaman Belum tersedia');
+        return redirect('/');
+    }
+
+    public function chat(){
+
+        Alert::error(' error ', ' Halaman Belum tersedia');
+        return redirect('/');
+    }
+
+
     
 }

@@ -90,13 +90,23 @@ class frontendController extends Controller
     public function daftar($id){
 
         // return $id;
+        $cek = Auth::user()->with('profil_user_r')->get();
+        foreach ($cek as $key => $c) {
+            # code...
+            if ($c->profil_user_r == null) {
+                # code...
+                Alert::error(' Gagal ', ' Lengkapi Data Anda Terlebih Dulu!!!');
+                return redirect('/page_add_profil');
+            }
+        }
+
         if (Auth::user()->role > 0) {
             Alert::error(' Gagal ', ' Anda Menggunakan Akun Admin!!!');
 
             Auth::logout();
             return redirect('/');
-
         }
+        
         $store_relation_jobs_users = new \App\Relation_Jobs_Users;
         $store_relation_jobs_users->id_user = Auth::user()->id;
         $store_relation_jobs_users->id_jobs = $id;
@@ -107,5 +117,5 @@ class frontendController extends Controller
     }
   
 
-
+   
 }

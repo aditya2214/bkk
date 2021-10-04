@@ -15,7 +15,7 @@
                     <div class="">
                         <div class="form-group">
                             <label for="">Foto Profile</label><br>
-                            <img src="{{ asset ('storage/'.$profil_user->images) }}" class="img-thumbnail" style="width:100px; border-radius:50%;" alt="">
+                            <img src="{{ asset ('storage/'.$profil_user->images) }}" class="img-thumbnail" style="width:100px; height:100px;border-radius:50%;" alt="">
                         </div>
                         <div class="form-group">
                             <label for=""><b>Nama Lengkap</b></label><br>

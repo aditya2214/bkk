@@ -135,9 +135,9 @@ class HomeController extends Controller
             return $j_users->relation_user2->email;
         })
         ->editColumn('role', function ($j_users) {
-            if($j_users->role == 0 ){
+            if($j_users->relation_user2->role == 0 ){
                 return "<a href='jadikan_admin/".$j_users->id_user." ' class='badge badge-primary'>User</a>";
-            }else{
+            }elseif($j_users->relation_user2->role > 0){
                 return "<a href='jadikan_user/".$j_users->id_user." ' class='badge badge-success'>Admin</a>";
             }
         })
@@ -165,6 +165,14 @@ class HomeController extends Controller
     public function view_peserta($id){
         $view_peserta = \App\Relation_Jobs_Users::where('id_jobs',$id)->get();
 
-        return view('component_backend.content.view_peserta',compact('view_peserta'));
+        $db_jobs = \App\Jobs::where('id',$id)->first();
+
+        // return $db_jobs;
+        return view('component_backend.content.view_peserta',compact('view_peserta','db_jobs'));
+    }
+
+    public function pengumuman_test(){
+
+        return view('component_backend.content.pengumuman_test');
     }
 }
