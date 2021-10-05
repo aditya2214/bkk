@@ -32,7 +32,11 @@
                     @foreach($view_peserta as $key=>$vp)
                         <tr>
                             <td>{{$key+1}}</td>
-                            <td>{{$vp->relation_user->active_period}}</td>
+                            @if($vp->relation_user->active_period > date('Y-m-d'))
+                            <td><p class="text-success">Active </p> : {{$vp->relation_user->active_period}}</td>
+                            @else
+                            <td><p class="text-danger">Expire </p> : {{$vp->relation_user->active_period}}</td>
+                            @endif
                             <td>{{$vp->relation_user->full_name}}</td>
                             <td>{{$vp->relation_user->place}} ,{{date('d M Y',strtotime($vp->relation_user->date_of_birth))}}</td>
                             <td>{{$vp->relation_user->number_phone}}</td>

@@ -18,9 +18,7 @@ class noAuthFrontendController extends Controller
 
             $profil_user = \App\ProfilUsers::where('id_user',Auth::user()->id)->first();
 
-
-
-
+           
             return view('content_frontend.loker',compact('jobs','profil_user'));
         }else {
             # code...

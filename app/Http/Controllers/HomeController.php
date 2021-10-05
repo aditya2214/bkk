@@ -39,8 +39,15 @@ class HomeController extends Controller
                 $profil_user = \App\ProfilUsers::where('id_user',Auth::user()->id)->first();
             }
 
-
-            return view('content_frontend.loker',compact('jobs','profil_user'));
+            $user_c = \App\User::count();
+            $jobs_c = \App\Jobs::count();
+            $m_active = DB::table('profil_users')
+                ->whereRaw('active_period > '.date('Y-m-d'))
+                ->count();
+            $m_nonaktif = DB::table('profil_users')
+            ->whereRaw('active_period < '.date('Y-m-d'))
+            ->count();
+            return view('content_frontend.loker',compact('jobs','profil_user','m_nonaktif','m_active','jobs_c','user_c'));
         }else{
             $count_jobs = \App\Jobs::count();
             $count_user = \App\User::count();

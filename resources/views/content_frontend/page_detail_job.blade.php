@@ -28,7 +28,8 @@
                 <div class="card-body pt-2">
                     <h4 class="mb-0">CV6</h4>
                     <p class="text-warning"></i>&nbsp; Rp 20.000</p>
-                    
+                    <button class="btn btn-primary btn-sm form-control">Pesan</button>
+
                 </div>
 
             </div>
@@ -40,7 +41,8 @@
                 <div class="card-body pt-2">
                     <h4 class="mb-0">CV1</h4>
                     <p class="text-warning"></i>&nbsp; Rp 20.000</p>
-                    
+                    <button class="btn btn-primary btn-sm form-control">Pesan</button>
+
                 </div>
 
             </div>
@@ -52,7 +54,8 @@
                 <div class="card-body pt-2">
                     <h4 class="mb-0">CV1</h4>
                     <p class="text-warning"></i>&nbsp; Rp 20.000</p>
-                    
+                    <button class="btn btn-primary btn-sm form-control">Pesan</button>
+
                 </div>
 
             </div>
@@ -64,7 +67,8 @@
                 <div class="card-body pt-2">
                     <h4 class="mb-0">CV1</h4>
                     <p class="text-warning"></i>&nbsp; Rp 20.000</p>
-                    
+                    <button class="btn btn-primary btn-sm form-control">Pesan</button>
+
                 </div>
 
             </div>
@@ -76,7 +80,8 @@
                 <div class="card-body pt-2">
                     <h4 class="mb-0">CV1</h4>
                     <p class="text-warning"></i>&nbsp; Rp 20.000</p>
-                    
+                    <button class="btn btn-primary btn-sm form-control">Pesan</button>
+
                 </div>
 
             </div>
@@ -88,7 +93,8 @@
                 <div class="card-body pt-2">
                     <h4 class="mb-0">CV1</h4>
                     <p class="text-warning"></i>&nbsp; Rp 20.000</p>
-                    
+                    <button class="btn btn-primary btn-sm form-control">Pesan</button>
+
                 </div>
 
             </div>
