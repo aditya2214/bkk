@@ -68,7 +68,7 @@
         <div class="header-large-title">
             <h1 class="title">BKK SMK PGRI 2 KARAWANG</h1>
             @if(Auth::user() != null)
-            <h4 class="subtitle">Selamat Datang {{Auth::user()->name}} </h4>
+            <h4 class="subtitle">Login Sebagai {{Auth::user()->name}} </h4>
             @else
             <h4 class="subtitle">Selamat Datang </h4>
             @endif

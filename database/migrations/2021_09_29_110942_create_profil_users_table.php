@@ -16,6 +16,7 @@ class CreateProfilUsersTable extends Migration
         Schema::create('profil_users', function (Blueprint $table) {
             $table->id();
             $table->integer('id_user');
+            $table->date('active_period');
             $table->string('images',255);
             $table->string('full_name',50);
             $table->string('place',50);

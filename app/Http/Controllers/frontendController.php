@@ -106,6 +106,11 @@ class frontendController extends Controller
             Auth::logout();
             return redirect('/');
         }
+
+        // $ceks_relation = \App\Relation_Jobs_Users::where('id',$id)->where('id_user',Auth::user()->id)->get();
+
+        
+        // return $ceks_relation;
         
         $store_relation_jobs_users = new \App\Relation_Jobs_Users;
         $store_relation_jobs_users->id_user = Auth::user()->id;

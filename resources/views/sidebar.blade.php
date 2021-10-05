@@ -94,7 +94,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="app-components.html" class="item">
+                        <a href="{{ url ('chat') }}" class="item">
                             <div class="icon-box bg-primary">
                                 <ion-icon name="cube-outline"></ion-icon>
                             </div>
@@ -105,7 +105,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url ('home') }}" class="item">
+                        <a href="{{ url ('/') }}" class="item">
                             <div class="icon-box bg-primary">
                                 <ion-icon name="layers-outline"></ion-icon>
                             </div>

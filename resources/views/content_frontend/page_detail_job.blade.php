@@ -2,6 +2,7 @@
 
 @section('content')
 <!-- App Capsule -->
+    
     <div class="section full mt-2">
         <div class="section-title"><b>{{$jobs_first->title_jobs}}</b></div>
         <div class="wide-block pt-2 pb-2">

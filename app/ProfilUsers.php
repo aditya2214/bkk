@@ -11,4 +11,9 @@ class ProfilUsers extends Model
         return $this->belongsTo(User::Class, 'id_user', 'id');
     }
 
+    public function profil_member_user_r()
+    {
+        return $this->belongsTo('\App\MemberSystem', 'id_member');
+    }
+
 }

@@ -13,7 +13,7 @@
         <b>Media BKK</b>
         </div>
     </a>
-    <a href="{{ url ('chat') }}"" class="item">
+    <a href="{{ url ('chat') }}" class="item">
         <div class="col">
         <i class="far fa-comments fa-3x"></i>
             <span class="badge badge-danger">5</span>

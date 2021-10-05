@@ -32,6 +32,8 @@ class HomeController extends Controller
             ->orderBy('jobs.id','DESC')
             ->get();
 
+            // $cek_relation_jobs = \App\Relation_Jobs_Users::where('id_user',Auth::user()->id)->get();
+
             if (Auth::user() != null) {
                 # code...
                 $profil_user = \App\ProfilUsers::where('id_user',Auth::user()->id)->first();
@@ -125,9 +127,18 @@ class HomeController extends Controller
     public function json_users(){
         $j_users = \App\ProfilUsers::with('relation_user2')->get();
 
-        // return $j_users;
+        // return $j_users->relation_user2->active_period;
+        // $d = 
+        // return $d;
 
         return Datatables::of($j_users)
+        ->editColumn('active_period', function ($j_users) {
+            if($j_users->active_period < date('Y-m-d') ){
+                return "<p class='text-danger'><i>Expire</i></p> :".$j_users->active_period;
+            }elseif($j_users->active_period > date('Y-m-d')){
+                return "<p class='text-success'><i>Active</i></p>".$j_users->active_period;
+            }
+        })
         ->editColumn('name', function ($j_users) {
             return $j_users->relation_user2->name;
         })
@@ -163,7 +174,7 @@ class HomeController extends Controller
     }
 
     public function view_peserta($id){
-        $view_peserta = \App\Relation_Jobs_Users::where('id_jobs',$id)->get();
+        $view_peserta = \App\Relation_Jobs_Users::with('relation_user')->where('id_jobs',$id)->distinct()->get();
 
         $db_jobs = \App\Jobs::where('id',$id)->first();
 

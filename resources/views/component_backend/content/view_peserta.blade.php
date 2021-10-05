@@ -19,6 +19,7 @@
                     <thead class="bg-primary text-white">
                         <tr>
                             <th>No</th>
+                            <th>Active_Period</th>
                             <th>Nama _Peserta</th>
                             <th>Tempat_Tanggal_Lahir</th>
                             <th>Nomer_Wa</th>
@@ -31,6 +32,7 @@
                     @foreach($view_peserta as $key=>$vp)
                         <tr>
                             <td>{{$key+1}}</td>
+                            <td>{{$vp->relation_user->active_period}}</td>
                             <td>{{$vp->relation_user->full_name}}</td>
                             <td>{{$vp->relation_user->place}} ,{{date('d M Y',strtotime($vp->relation_user->date_of_birth))}}</td>
                             <td>{{$vp->relation_user->number_phone}}</td>

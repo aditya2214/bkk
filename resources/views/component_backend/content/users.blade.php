@@ -18,7 +18,8 @@
                     <table class="table table-bordered" id="tabel-user">
                         <thead class="bg-primary text-white">
                             <tr>
-                                <th>Username</th>
+                                <th>Active_Period</th>
+                                <th>Full_Name</th>
                                 <th>Email</th>
                                 <th>Place</th>
                                 <th>Date_Of_Birth</th>
@@ -53,7 +54,8 @@
         serverSide: true,
         ajax: "{{url ('/json_users') }}",
         columns: [
-            { data: 'name', name: 'name' },
+            { data: 'active_period', name: 'active_period' },
+            { data: 'full_name', name: 'full_name' },
             { data: 'email', name: 'email' },
             { data: 'place', name: 'place' },
             { data: 'date_of_birth', name: 'date_of_birth' },
