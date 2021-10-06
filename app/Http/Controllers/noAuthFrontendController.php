@@ -18,8 +18,16 @@ class noAuthFrontendController extends Controller
 
             $profil_user = \App\ProfilUsers::where('id_user',Auth::user()->id)->first();
 
-           
-            return view('content_frontend.loker',compact('jobs','profil_user'));
+            $user_c = \App\User::count();
+            $jobs_c = \App\Jobs::count();
+            $m_active = DB::table('profil_users')
+                ->Where('active_period','>',date('Y-m-d'))
+                ->count();
+                
+            $m_nonaktif = DB::table('profil_users')
+            ->Where('active_period','<',date('Y-m-d'))
+            ->count();
+            return view('content_frontend.loker',compact('jobs','profil_user','m_nonaktif','m_active','jobs_c','user_c'));
         }else {
             # code...
             $jobs = DB::table('jobs')
@@ -28,10 +36,17 @@ class noAuthFrontendController extends Controller
             ->orderBy('jobs.id','DESC')
             ->get();
 
+            $user_c = \App\User::count();
+            $jobs_c = \App\Jobs::count();
+            $m_active = DB::table('profil_users')
+                ->Where('active_period','>',date('Y-m-d'))
+                ->count();
+                
+            $m_nonaktif = DB::table('profil_users')
+            ->Where('active_period','<',date('Y-m-d'))
+            ->count();
 
-
-
-            return view('content_frontend.loker',compact('jobs'));
+            return view('content_frontend.loker',compact('jobs','m_nonaktif','m_active','jobs_c','user_c'));
         }
 
     }
@@ -65,13 +80,13 @@ class noAuthFrontendController extends Controller
 
     public function media_bkk(){
 
-        Alert::error(' error ', ' Halaman Belum tersedia');
+        Alert::error('error', ' Halaman Belum tersedia');
         return redirect('/');
     }
 
     public function chat(){
 
-        Alert::error(' error ', ' Halaman Belum tersedia');
+        Alert::error('error', ' Halaman Belum tersedia');
         return redirect('/');
     }
 

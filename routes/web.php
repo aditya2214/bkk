@@ -49,6 +49,8 @@ Route::get('/home', 'HomeController@index')->name('home');
     // users
     Route::get('/page_users', 'homeController@page_users')->name('page_users');
     Route::get('json_users','homeController@json_users');
+    Route::post('/update_role', 'homeController@update_role')->name('update_role');
+    Route::post('/update_member', 'homeController@update_member')->name('update_member');
 
     // pengumuman test
     Route::get('pengumuman_test','homeController@pengumuman_test');

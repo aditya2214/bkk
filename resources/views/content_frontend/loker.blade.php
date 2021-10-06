@@ -150,17 +150,6 @@
         </div>
     </div>
 </div>
-<?php
- $user_c = \App\User::count();
- $jobs_c = \App\Jobs::count();
- $m_active = DB::table('profil_users')
-     ->whereRaw('active_period > '.date('Y-m-d'))
-     ->count();
-     
- $m_nonaktif = DB::table('profil_users')
- ->whereRaw('active_period < '.date('Y-m-d'))
- ->count();
-?>
 
 <div class="section mt-2">
     <div class="row">

@@ -14,7 +14,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body bg-primary text-white">
                 <div class="float-right">
                     <a href="{{ url ('index_a_jobs') }}" class="btn btn-success">Lihat Lowongan</a>
                 </div>

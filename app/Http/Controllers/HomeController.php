@@ -42,13 +42,19 @@ class HomeController extends Controller
             $user_c = \App\User::count();
             $jobs_c = \App\Jobs::count();
             $m_active = DB::table('profil_users')
-                ->whereRaw('active_period > '.date('Y-m-d'))
+                ->Where('active_period','>',date('Y-m-d'))
                 ->count();
+                
             $m_nonaktif = DB::table('profil_users')
-            ->whereRaw('active_period < '.date('Y-m-d'))
+            ->Where('active_period','<',date('Y-m-d'))
             ->count();
+
             return view('content_frontend.loker',compact('jobs','profil_user','m_nonaktif','m_active','jobs_c','user_c'));
         }else{
+            if (\App\ProfilUsers::where('id',Auth::user()->id)->first() == null) {
+                
+                return redirect('page_profil_user');
+            }
             $count_jobs = \App\Jobs::count();
             $count_user = \App\User::count();
     
@@ -56,6 +62,17 @@ class HomeController extends Controller
 
         }
    
+    }
+
+    public function update_role(Request $request){
+        // return $request->all();
+
+        $update_role = DB::table('users')->where('id',$request->id_users)->update([
+            'role' => $request->id_role
+        ]);
+
+        Alert::success(' Success ', ' Succesfully Updated');
+        return redirect()->back();
     }
 
     public function page_post_a_jobs(){
@@ -154,9 +171,13 @@ class HomeController extends Controller
         })
         ->editColumn('role', function ($j_users) {
             if($j_users->relation_user2->role == 0 ){
-                return "<a href='jadikan_admin/".$j_users->id_user." ' class='badge badge-primary'>User</a>";
+                // return "<a href='jadikan_admin/".$j_users->id_user." ' class='badge badge-primary' >User</a>";
+                return "<span class='badge badge-primary' >User</span>";
+
             }elseif($j_users->relation_user2->role > 0){
-                return "<a href='jadikan_user/".$j_users->id_user." ' class='badge badge-success'>Admin</a>";
+                // return "<a href='jadikan_user/".$j_users->id_user." ' class='badge badge-success'>Admin</a>";
+                return "<span class='badge badge-success'>Admin</span>";
+
             }
         })
         ->escapeColumns([])
@@ -166,9 +187,21 @@ class HomeController extends Controller
 
     }
 
-    public function page_users(){
+    public function update_member(Request $request){
+       $updated_member = DB::table('profil_users')->where('id_user'->$request->id_users_2)->update([
+           'active_period' => $request->actived
+       ]);
 
-        return view('component_backend.content.users');
+       Alert::success(' Success ', ' Succesfully Updated');
+       return redirect()->back();
+    }
+
+    public function page_users(){
+        $j_users = \App\User::orderBy('email','asc')->get();
+        $j_users2 = \App\ProfilUsers::orderBy('full_name','asc')->get();
+        // return $j_users;
+
+        return view('component_backend.content.users',compact('j_users','j_users'));
     }
 
         
